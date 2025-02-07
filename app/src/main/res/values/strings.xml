@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Todo</string>
+    <string name="to_do_list">To Do List</string>
+    <string name="list">List</string>
+    <string name="settings">Settings</string>
+    <string name="add_new_task">Add new Task</string>
+    <string name="title">enter your task</string>
+    <string name="description">enter your task description</string>
+    <string name="select_date">Select date</string>
+    <string name="select_time">Select time</string>
+    <string name="required">Required</string>
 </resources>

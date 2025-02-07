@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tool:cardCornerRadius="8dp"
+    tool:contentPadding="10dp"
+    android:layout_margin="10dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/weekDayTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Mon"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tool:layout_constraintTop_toTopOf="parent"
+            tool:layout_constraintStart_toStartOf="parent"
+            tool:layout_constraintEnd_toEndOf="parent"
+            tool:layout_constraintBottom_toTopOf="@id/monthDayTv"
+            />
+
+        <TextView
+            android:id="@+id/monthDayTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="21"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tool:layout_constraintTop_toBottomOf="@id/weekDayTv"
+            tool:layout_constraintBottom_toBottomOf="parent"
+            tool:layout_constraintStart_toStartOf="parent"
+            tool:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
