@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/mint">
+
+    <View
+        android:id="@+id/topToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_do_list"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/topToolBar"
+        android:layout_marginStart="20dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toBottomOf="@id/topToolBar"
+        app:layout_constraintHeight_percent="0.07"
+        />
+
+<com.kizitonwose.calendar.view.WeekCalendarView
+    android:id="@+id/calendarRv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cv_dayViewResource="@layout/item_week_day"
+    app:cv_daySize="freeForm"
+    app:cv_scrollPaged="false"
+    app:layout_constraintBottom_toTopOf="@id/taskRv"
+    app:layout_constraintTop_toBottomOf="@id/topToolBar"
+    />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_task"
+        app:layout_constraintTop_toBottomOf="@id/calendarRv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
