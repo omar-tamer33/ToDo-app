@@ -62,6 +62,17 @@ class TaskListFragment : Fragment() {
         adapter = TaskAdapter()
         binding.taskRv.adapter = adapter
         getAllTasksFromDatabase()
+        adapter.onDeleteClickListener = TaskAdapter.OnTaskClickListener{position, task ->
+            TaskDatabase.getInstance().getTaskDao().deleteTask(task)
+            adapter.delete(position,task)
+        }
+
+        adapter.onDoneBtnClickListener = TaskAdapter.OnTaskClickListener{position, task ->
+            task.isDone=!task.isDone
+            TaskDatabase.getInstance().getTaskDao().updateTask(task)
+            adapter.updtaeTask(position,task)
+
+        }
     }
 
     override fun onResume() {

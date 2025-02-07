@@ -11,7 +11,7 @@ data class Task(
     var id: Int? = null,
     var title: String? = null,
     var date: Date? = null,
-    var isDone: Boolean? = false
+    var isDone: Boolean
 ){
     @Ignore
     var description : String? = null
