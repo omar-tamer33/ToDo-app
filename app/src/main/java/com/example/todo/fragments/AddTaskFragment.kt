@@ -55,7 +55,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
 
     private fun addTask() {
         if (isHidden) return
-        TaskDatabase.getInstance().getTaskDao().insertTask(Task(title = binding.title.text.toString(), date = calendar.time))
+        TaskDatabase.getInstance().getTaskDao().insertTask(Task(title = binding.title.text.toString(), date = calendar.time , isDone = false))
         onTaskAddedListener?.onTaskAdded()
         dismiss()
 

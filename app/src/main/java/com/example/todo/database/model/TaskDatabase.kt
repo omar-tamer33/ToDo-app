@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.todo.database.model.dao.TaskDao
 
-@Database(entities = arrayOf(Task::class), version = 1)
+@Database(entities = arrayOf(Task::class), version = 2)
 @TypeConverters(Converters::class)
 abstract class TaskDatabase : RoomDatabase() {
     abstract fun getTaskDao(): TaskDao
