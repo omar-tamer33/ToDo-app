@@ -50,6 +50,12 @@ class TaskAdapter(var taskList : MutableList<Task>? = null) : Adapter<TaskAdapte
                 onDoneBtnClickListener?.onClick(position,item)
             }
         }
+
+        onItemClickListener?.let {
+            holder.binding.dragItem.setOnClickListener {
+                onItemClickListener?.onClick(position,item)
+            }
+        }
     }
 
     fun delete(position: Int , task: Task){
@@ -90,6 +96,8 @@ class TaskAdapter(var taskList : MutableList<Task>? = null) : Adapter<TaskAdapte
     var onDeleteClickListener:OnTaskClickListener?=null
 
     var onDoneBtnClickListener : OnTaskClickListener?=null
+
+    var onItemClickListener :OnTaskClickListener?=null
 
    fun interface OnTaskClickListener{
         fun onClick(position: Int , task: Task)

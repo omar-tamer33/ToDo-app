@@ -1,10 +1,12 @@
 package com.example.todo.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.todo.EditTaskActivity
 import com.example.todo.R
 import com.example.todo.adapters.TaskAdapter
 import com.example.todo.database.model.TaskDatabase
@@ -73,6 +75,12 @@ class TaskListFragment : Fragment() {
             adapter.updtaeTask(position,task)
 
         }
+
+        adapter.onItemClickListener = TaskAdapter.OnTaskClickListener { position, task ->
+            val intent = Intent(requireContext(),EditTaskActivity::class.java)
+            intent.putExtra("task",task)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -81,6 +89,11 @@ class TaskListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getAllTasksFromDatabase()
     }
 
     fun getAllTasksFromDatabase(){
